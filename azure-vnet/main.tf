@@ -13,6 +13,10 @@ provider "azurerm" {
   features {}
 }
 
+locals {
+  name = "${var.environment}-${var.location}-${var.name_postfix}"
+}
+
 // Create Azure virtual network
 resource "azurerm_virtual_network" "vnet" {
   name                = "vnet-${var.name}"
@@ -21,7 +25,7 @@ resource "azurerm_virtual_network" "vnet" {
   address_space       = var.address_space
 
   subnet {
-    name           = "snet-${var.subnet_name}"
+    name           = "snet-${var.name}"
     address_prefix = var.subnet_address_space
   }
 }

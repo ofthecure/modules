@@ -1,10 +1,15 @@
-variable "name" {
-  description = "Name of the vnet"
+variable "environment" {
+  description = "Name of the environment the vnet belongs to"
   type        = string
 }
 
 variable "location" {
   description = "Azure region of the vnet"
+  type        = string
+}
+
+variable "name_postfix" {
+  description = "Naming postfix for the vnet"
   type        = string
 }
 
