@@ -19,13 +19,13 @@ locals {
 
 // Create Azure virtual network
 resource "azurerm_virtual_network" "vnet" {
-  name                = "vnet-${var.name}"
+  name                = "vnet-${local.name}"
   location            = var.location
   resource_group_name = var.resource_group
   address_space       = var.address_space
 
   subnet {
-    name           = "snet-${var.name}"
+    name           = "snet-${local.name}"
     address_prefix = var.subnet_address_space
   }
 }
