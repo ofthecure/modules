@@ -25,5 +25,5 @@ variable "address_space" {
 
 variable "subnet_address_space" {
   description = "Address space (CIDR notation) of the vnet subnet"
-  type        = list(string)
+  type        = string
 }
