@@ -18,7 +18,19 @@ variable "container_registry_id" {
   type        = string
 }
 
+variable "vnet_subnet_id" {
+  description = "ID of the subnet to use for the node pool"
+  type = string
+}
+
 variable "resource_group" {
   description = "Name of the AKS cluster resource group"
   type        = string
+}
+
+variable "default_node_pool" {
+  description = "Default node pool configuration"
+  type = object({
+    node_count = string
+  })
 }
